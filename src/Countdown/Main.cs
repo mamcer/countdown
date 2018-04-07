@@ -29,9 +29,6 @@ namespace Countdown
                 // Add the value in the registry so that the application runs at startup
                 rkApp.SetValue("YaniMaritoCountdown", Application.ExecutablePath.ToString());
             }
-//Remove the application           
-            // Remove the value from the registry so that the application doesn't start
-            //rkApp.DeleteValue("MyApp", false);
         }
 
         private void Main_Shown(object sender, EventArgs e)
@@ -54,7 +51,7 @@ namespace Countdown
 
         private void ShowCountdown()
         {
-            if (Visible == false)
+            if (!Visible)
             {
                 ShowWindow();
             }
@@ -89,10 +86,6 @@ namespace Countdown
             Close();
         }
 
-        private void Main_Leave(object sender, EventArgs e)
-        {
-        }
-
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowCountdown();
@@ -100,8 +93,7 @@ namespace Countdown
 
         private void pnlCountdown_Click(object sender, EventArgs e)
         {
-            Hide();
-            timer.Enabled = false;
+            HideApplication();
         }
 
         private void timerAnimation_Tick(object sender, EventArgs e)
@@ -118,13 +110,18 @@ namespace Countdown
 
         private void timerMessage_Tick(object sender, EventArgs e)
         {
-            if(Visible == false)
+            if(!Visible)
             {
                 notifyIcon.ShowBalloonTip(15000);
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HideApplication();
+        }
+
+        private void HideApplication()
         {
             Hide();
             timer.Enabled = false;

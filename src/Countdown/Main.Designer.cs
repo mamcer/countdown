@@ -218,7 +218,6 @@ namespace Countdown
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Shown += new System.EventHandler(this.Main_Shown);
-            this.Leave += new System.EventHandler(this.Main_Leave);
             this.pnlCountdown.ResumeLayout(false);
             this.pnlCountdown.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);
