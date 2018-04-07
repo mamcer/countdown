@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -11,23 +6,23 @@ namespace Countdown
 {
     public partial class Main : Form
     {
-        private int mainHeigth;
-        private int mainWidth;
-        private DateTime currentDateTime;
-        RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        private readonly int _mainHeigth;
+        private readonly int _mainWidth;
+        private DateTime _currentDateTime;
+        readonly RegistryKey _rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
         public Main()
         {
             InitializeComponent();
-            mainHeigth = Height;
-            mainWidth = Width;
-            currentDateTime = DateTime.Now;
+            _mainHeigth = Height;
+            _mainWidth = Width;
+            _currentDateTime = DateTime.Now;
             // Check to see the current state (running at startup or not)
-            if (rkApp.GetValue("YaniMaritoCountdown") == null)
+            if (_rkApp.GetValue("YaniMaritoCountdown") == null)
             {
                 // The value doesn't exist, the application is not set to run at startup
                 // Add the value in the registry so that the application runs at startup
-                rkApp.SetValue("YaniMaritoCountdown", Application.ExecutablePath.ToString());
+                _rkApp.SetValue("YaniMaritoCountdown", Application.ExecutablePath);
             }
         }
 
@@ -35,8 +30,8 @@ namespace Countdown
         {
             int screenWidth = Screen.GetWorkingArea(new Form()).Width;
             int screenHeight = Screen.GetWorkingArea(new Form()).Height;
-            Top = screenHeight - mainHeigth - 5;
-            Left = screenWidth - mainWidth - 5;
+            Top = screenHeight - _mainHeigth - 5;
+            Left = screenWidth - _mainWidth - 5;
             Hide();
             ShowCountdown();
             WindowState = FormWindowState.Normal;
@@ -55,11 +50,11 @@ namespace Countdown
             {
                 ShowWindow();
             }
-            currentDateTime = DateTime.Now;
+            _currentDateTime = DateTime.Now;
             DateTime theDate = new DateTime(2007, 11, 24, 21, 0, 0);
-            if (theDate > currentDateTime)
+            if (theDate > _currentDateTime)
             {
-                TimeSpan dtCountdown = theDate.Subtract(currentDateTime); 
+                TimeSpan dtCountdown = theDate.Subtract(_currentDateTime); 
                 lblDays.Text = dtCountdown.Days.ToString();
                 lblHours.Text = dtCountdown.Hours.ToString();
                 lblMinutes.Text = dtCountdown.Minutes.ToString();
@@ -75,7 +70,7 @@ namespace Countdown
         private void timer_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            if (currentDateTime.Hour != now.Hour || currentDateTime.Minute != now.Minute)
+            if (_currentDateTime.Hour != now.Hour || _currentDateTime.Minute != now.Minute)
             {
                 ShowCountdown();
             }
@@ -129,12 +124,12 @@ namespace Countdown
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox1.Image = global::Countdown.Properties.Resources.close01;
+            pictureBox1.Image = Properties.Resources.close01;
         }
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            pictureBox1.Image = global::Countdown.Properties.Resources.close;
+            pictureBox1.Image = Properties.Resources.close;
         }
     }
 }

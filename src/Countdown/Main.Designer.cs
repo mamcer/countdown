@@ -31,6 +31,7 @@ namespace Countdown
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlCountdown = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,17 +39,16 @@ namespace Countdown
             this.lblHours = new System.Windows.Forms.Label();
             this.lblDays = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.timerAnimation = new System.Windows.Forms.Timer(this.components);
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCountdown.SuspendLayout();
-            this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCountdown
@@ -69,13 +69,26 @@ namespace Countdown
             this.pnlCountdown.Visible = false;
             this.pnlCountdown.Click += new System.EventHandler(this.pnlCountdown_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Countdown.Properties.Resources.close01;
+            this.pictureBox1.Location = new System.Drawing.Point(176, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(107, 53);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(119, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 18);
+            this.label3.Size = new System.Drawing.Size(46, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "horas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -83,9 +96,10 @@ namespace Countdown
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 80);
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(141, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
+            this.label2.Size = new System.Drawing.Size(53, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "minutos";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,10 +107,10 @@ namespace Countdown
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 18);
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(99, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 23);
+            this.label1.Size = new System.Drawing.Size(44, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "días";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,10 +118,10 @@ namespace Countdown
             // lblMinutes
             // 
             this.lblMinutes.AutoSize = true;
-            this.lblMinutes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinutes.Location = new System.Drawing.Point(106, 74);
+            this.lblMinutes.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinutes.Location = new System.Drawing.Point(106, 72);
             this.lblMinutes.Name = "lblMinutes";
-            this.lblMinutes.Size = new System.Drawing.Size(30, 23);
+            this.lblMinutes.Size = new System.Drawing.Size(36, 28);
             this.lblMinutes.TabIndex = 2;
             this.lblMinutes.Text = "30";
             this.lblMinutes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,10 +129,10 @@ namespace Countdown
             // lblHours
             // 
             this.lblHours.AutoSize = true;
-            this.lblHours.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHours.Location = new System.Drawing.Point(70, 41);
+            this.lblHours.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHours.Location = new System.Drawing.Point(70, 39);
             this.lblHours.Name = "lblHours";
-            this.lblHours.Size = new System.Drawing.Size(41, 33);
+            this.lblHours.Size = new System.Drawing.Size(54, 42);
             this.lblHours.TabIndex = 1;
             this.lblHours.Text = "12";
             this.lblHours.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,11 +140,11 @@ namespace Countdown
             // lblDays
             // 
             this.lblDays.AutoSize = true;
-            this.lblDays.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDays.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDays.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDays.Location = new System.Drawing.Point(3, -3);
+            this.lblDays.Location = new System.Drawing.Point(3, -5);
             this.lblDays.Name = "lblDays";
-            this.lblDays.Size = new System.Drawing.Size(80, 49);
+            this.lblDays.Size = new System.Drawing.Size(105, 61);
             this.lblDays.TabIndex = 0;
             this.lblDays.Text = "135";
             this.lblDays.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -145,11 +159,6 @@ namespace Countdown
             this.notifyIcon.Text = "Cuenta Regresiva!";
             this.notifyIcon.Visible = true;
             // 
-            // timer
-            // 
-            this.timer.Interval = 30000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -157,27 +166,32 @@ namespace Countdown
             this.toolStripMenuItem1,
             this.cerrarToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(131, 54);
+            this.contextMenuStrip.Size = new System.Drawing.Size(120, 54);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.showToolStripMenuItem.Text = "Mostrar";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
-            // 
-            // cerrarToolStripMenuItem
-            // 
-            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.cerrarToolStripMenuItem.Text = "Cerrar";
-            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 6);
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 30000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // timerAnimation
             // 
@@ -188,19 +202,6 @@ namespace Countdown
             this.timerMessage.Enabled = true;
             this.timerMessage.Interval = 3600000;
             this.timerMessage.Tick += new System.EventHandler(this.timerMessage_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Countdown.Properties.Resources.close01;
-            this.pictureBox1.Location = new System.Drawing.Point(176, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
             // Main
             // 
@@ -220,8 +221,8 @@ namespace Countdown
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.pnlCountdown.ResumeLayout(false);
             this.pnlCountdown.PerformLayout();
-            this.contextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
