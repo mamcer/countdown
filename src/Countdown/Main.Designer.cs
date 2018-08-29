@@ -88,7 +88,7 @@ namespace Countdown
             this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(119, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 23);
+            this.label3.Size = new System.Drawing.Size(60, 30);
             this.label3.TabIndex = 5;
             this.label3.Text = "horas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,7 +99,7 @@ namespace Countdown
             this.label2.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(141, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 19);
+            this.label2.Size = new System.Drawing.Size(67, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "minutos";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,7 +110,7 @@ namespace Countdown
             this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(99, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 28);
+            this.label1.Size = new System.Drawing.Size(54, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "días";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +121,7 @@ namespace Countdown
             this.lblMinutes.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinutes.Location = new System.Drawing.Point(106, 72);
             this.lblMinutes.Name = "lblMinutes";
-            this.lblMinutes.Size = new System.Drawing.Size(36, 28);
+            this.lblMinutes.Size = new System.Drawing.Size(45, 35);
             this.lblMinutes.TabIndex = 2;
             this.lblMinutes.Text = "30";
             this.lblMinutes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,7 +132,7 @@ namespace Countdown
             this.lblHours.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHours.Location = new System.Drawing.Point(70, 39);
             this.lblHours.Name = "lblHours";
-            this.lblHours.Size = new System.Drawing.Size(54, 42);
+            this.lblHours.Size = new System.Drawing.Size(67, 52);
             this.lblHours.TabIndex = 1;
             this.lblHours.Text = "12";
             this.lblHours.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,7 +144,7 @@ namespace Countdown
             this.lblDays.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDays.Location = new System.Drawing.Point(3, -5);
             this.lblDays.Name = "lblDays";
-            this.lblDays.Size = new System.Drawing.Size(105, 61);
+            this.lblDays.Size = new System.Drawing.Size(129, 77);
             this.lblDays.TabIndex = 0;
             this.lblDays.Text = "135";
             this.lblDays.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,30 +161,31 @@ namespace Countdown
             // 
             // contextMenuStrip
             // 
+            this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
             this.toolStripMenuItem1,
             this.cerrarToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(120, 54);
+            this.contextMenuStrip.Size = new System.Drawing.Size(132, 58);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
             this.showToolStripMenuItem.Text = "Mostrar";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
             // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
@@ -205,7 +206,7 @@ namespace Countdown
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(197, 101);
